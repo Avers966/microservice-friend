@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: microservice-friend
+
+  cloud:
+    kubernetes:
+      secrets:
+        sources:
+          - name: microservice-friend
+      config:
+        sources:
+          - name: library-core
+          - name: microservice-friend
+      reload:
+        enabled: true
+
+management:
+  endpoint:
+    restart:
+      enabled: true
+    health:
+      enabled: true
+    info:
+      enabled: true
+    prometheus:
+      enabled: true
