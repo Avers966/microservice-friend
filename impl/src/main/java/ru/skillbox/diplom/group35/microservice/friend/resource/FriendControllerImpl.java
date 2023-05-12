@@ -101,6 +101,12 @@ public class FriendControllerImpl implements FriendController {
     }
 
     @Override
+    public ResponseEntity<List<UUID>> getFriendIdById(UUID id) {
+        log.info("/api/v1/friends/friendId/id принят запрос на получение списка друзей по id " + id);
+        return ResponseEntity.ok(friendService.getFriendIdById(id));
+    }
+
+    @Override
     public ResponseEntity<CountDTO> getCount() {
         log.info("/api/v1/friends/count принят запрос - количество заявок в друзья ");
         return ResponseEntity.ok(friendService.getCount());

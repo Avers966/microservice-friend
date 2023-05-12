@@ -53,6 +53,9 @@ public interface FriendController extends BaseController<FriendShortDto, FriendS
     @GetMapping("/friendId")
     ResponseEntity<List<UUID>> getFriendId();
 
+    @GetMapping("/friendId/id")
+    ResponseEntity<List<UUID>> getFriendIdById(@RequestParam(value = "id", required=false) UUID id);
+
     @GetMapping("/count")
     ResponseEntity<CountDTO> getCount();
 

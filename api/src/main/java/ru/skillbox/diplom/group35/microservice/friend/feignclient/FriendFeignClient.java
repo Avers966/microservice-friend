@@ -32,6 +32,9 @@ public interface FriendFeignClient {
     @GetMapping("/friendId")
     ResponseEntity<List<UUID>> getFriendId();
 
+    @GetMapping("/friendId/id")
+    ResponseEntity<List<UUID>> getFriendIdById(@RequestParam(value = "id", required=false) UUID id);
+
     @GetMapping("/status")
     ResponseEntity<List<UUID>> statusFriend(@RequestParam(value = "status", required=false) String status);
 }
