@@ -169,10 +169,7 @@ public class FriendService {
         return listIdFriends;
     }
 
-<<<<<<< HEAD
-=======
 
->>>>>>> daf277c (оптимизация кода v6)
     public CountDTO getCount() {
         UUID myId = securityUtil.getAccountDetails().getId();
 
