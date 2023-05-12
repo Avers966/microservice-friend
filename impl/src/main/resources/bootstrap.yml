@@ -7,12 +7,15 @@ spring:
       secrets:
         sources:
           - name: microservice-friend
+            namespace: skillbox-alpha
       config:
         sources:
-          - name: library-core
-          - name: microservice-friend
+          - namespace: skillbox-alpha
+            name: microservice-friend
       reload:
         enabled: true
+        strategy: refresh # restart_context | shutdown
+        mode: event # polling
 
 management:
   endpoint:

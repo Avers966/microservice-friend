@@ -1,3 +1,6 @@
+server:
+  port: 8080
+
 spring:
   boot:
     admin:
@@ -15,3 +18,24 @@ spring:
     drop-first: true
     default-schema: friend
     liquibase-schema: friend
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/skillbox
+    username: friend
+    password: friend
+    driverClassName: org.postgresql.Driver
+
+  jpa:
+    show-sql: false
+    hibernate:
+      ddl-auto: none # none || create_drop
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQL10Dialect
+        format_sql: true
+        default_schema: friend # geo search-engine
+    open-in-view: false
+
+
+  autoconfigure:
+    exclude:    org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration
