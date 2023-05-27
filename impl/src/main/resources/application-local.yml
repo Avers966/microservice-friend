@@ -36,6 +36,11 @@ spring:
         default_schema: friend # geo search-engine
     open-in-view: false
 
+  kafka:
+    consumer:
+      group-id: event.1
+    bootstrap-servers: kafka-statefulset-0.kafka-svc.kafka.svc.cluster.local:9092
+
 
   autoconfigure:
     exclude:    org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration

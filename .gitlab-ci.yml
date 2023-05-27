@@ -9,7 +9,7 @@ build:
   stage: build
   only: 
     - develop
-#    - 3-create-microservice-friend
+
   script:
     - mvn -s maven-settings.xml clean package
   cache:
@@ -24,7 +24,7 @@ docker_deploy:
   stage: docker_deploy
   only: 
     - develop
-#    - 3-create-microservice-friend
+
 
   variables:
     TAG: latest
@@ -40,7 +40,7 @@ deploy_prod:
   stage: deploy_prod
   only:
     - develop
-#    - 3-create-microservice-friend
+
 
   except:
     - tags
