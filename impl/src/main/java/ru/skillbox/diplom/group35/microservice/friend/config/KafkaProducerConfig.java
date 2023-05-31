@@ -9,7 +9,8 @@ import org.springframework.kafka.core.DefaultKafkaProducerFactory;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.kafka.core.ProducerFactory;
 import org.springframework.kafka.support.serializer.JsonSerializer;
-import ru.skillbox.diplom.group35.microservice.notification.dto.EventNotification;
+import ru.skillbox.diplom.group35.library.core.dto.streaming.EventNotificationDto;
+
 
 import java.util.HashMap;
 import java.util.Map;
@@ -35,12 +36,12 @@ public class KafkaProducerConfig {
     }
 
     @Bean
-    public ProducerFactory<String, EventNotification> producerFactory() {
+    public ProducerFactory<String, EventNotificationDto> producerFactory() {
         return new DefaultKafkaProducerFactory<>(producerConfigs());
     }
 
     @Bean
-    public KafkaTemplate<String, EventNotification> kafkaTemplate() {
+    public KafkaTemplate<String, EventNotificationDto> kafkaTemplate() {
         return new KafkaTemplate<>(producerFactory());
     }
 

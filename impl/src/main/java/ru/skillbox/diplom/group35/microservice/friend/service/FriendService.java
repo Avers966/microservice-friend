@@ -7,13 +7,14 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
+import ru.skillbox.diplom.group35.library.core.dto.streaming.EventNotificationDto;
 import ru.skillbox.diplom.group35.library.core.utils.SecurityUtil;
 import ru.skillbox.diplom.group35.microservice.friend.dto.*;
 import ru.skillbox.diplom.group35.microservice.friend.mapper.FriendMapper;
 import ru.skillbox.diplom.group35.microservice.friend.model.Friend;
 import ru.skillbox.diplom.group35.microservice.friend.model.Friend_;
 import ru.skillbox.diplom.group35.microservice.friend.repository.FriendRepository;
-import ru.skillbox.diplom.group35.microservice.notification.dto.EventNotification;
+
 
 import javax.transaction.Transactional;
 import java.util.*;
@@ -89,7 +90,7 @@ public class FriendService {
         friendRepository.save(new Friend(idTo, myId, "REQUEST_FROM"));
         friendRepository.save(new Friend(myId, idTo,  "REQUEST_TO"));
 
-        EventNotification eventNotification = new EventNotification();
+        EventNotificationDto eventNotification = new EventNotificationDto();
         eventNotification.setNotificationType("FRIEND_REQUEST");
         eventNotification.setContent("Создал запрос на дружбу");
         eventNotification.setAuthorId(myId);

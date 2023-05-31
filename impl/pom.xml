@@ -37,11 +37,7 @@
             <artifactId>microservice-friend-domain</artifactId>
             <version>${revision}${sha1}${changelist}</version>
         </dependency>
-        <dependency>
-            <groupId>ru.skillbox.diplom.group35</groupId>
-            <artifactId>microservice-notification-api</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
-        </dependency>
+
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
