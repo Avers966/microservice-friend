@@ -1,5 +1,6 @@
 package ru.skillbox.diplom.group35.microservice.friend.resource;
 
+import io.swagger.v3.oas.annotations.Hidden;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;
@@ -66,11 +67,13 @@ public class FriendControllerImpl implements FriendController {
         return ResponseEntity.ok(friendService.search(searchDto, page));
     }
 
+    @Hidden
     @Override
     public ResponseEntity<FriendShortDto> create(FriendShortDto dto) {
         return null;
     }
 
+    @Hidden
     @Override
     public ResponseEntity<FriendShortDto> update(FriendShortDto dto) {
         return null;
